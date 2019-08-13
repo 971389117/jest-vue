@@ -1,7 +1,7 @@
 <template>
   <div class="todolist">
     <Heador @add="addUndoItem" data-test="header"></Heador>
-    <UndoList data-test="undolist"></UndoList>
+    <UndoList :list="undoList" @delete="handleItemDelete" data-test="undolist"></UndoList>
   </div>
 </template>
 
@@ -26,6 +26,9 @@ export default {
   methods: {
     addUndoItem (value) {
       this.undoList.push(value)
+    },
+    handleItemDelete (index) {
+      this.undoList.splice(index, 1)
     }
   }
 }
