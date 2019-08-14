@@ -17,7 +17,6 @@ describe('HelloWorld.vue', () => {
       })
     }).$mount('.hello')
     expect(document.querySelector('.hello').classList.length).toBe(1)
-    // console.log(document.body.innerHTML)
   })
 
   it('render props.msg when passed', () => {
@@ -28,7 +27,6 @@ describe('HelloWorld.vue', () => {
       }
     })
     expect(wrapper.text()).toMatch(msg)
-    console.log(wrapper.findAll('.mmm'), wrapper.findAll('h1').length)
     expect(wrapper.findAll('.mmm').length).toBe(1)
     wrapper.setProps({
       msg: 'hello'
